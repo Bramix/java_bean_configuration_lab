@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="NissanBrake" class="com.example.services.impl.brake.NissanBrake"></bean>
+    <bean id="NissanEngine" class="com.example.services.impl.engine.NissanEngine"></bean>
+    <bean id="NissanClutch" class="com.example.services.impl.clutch.NissanClutch"></bean>
+    <bean id="NissanChassis" class="com.example.services.impl.chassis.NissanChassis"></bean>
+    <bean id="NissanTransmission" class="com.example.services.impl.transmission.NissanTransmission"></bean>
+
+    <bean class="com.example.services.impl.Nissan">
+        <constructor-arg index="0" ref="NissanBrake"/>
+        <constructor-arg index="1" ref="NissanEngine"/>
+        <constructor-arg index="2" ref="NissanClutch"/>
+        <constructor-arg index="3" ref="NissanChassis"/>
+        <constructor-arg index="4" ref="NissanTransmission"/>
+    </bean>
+
+
+</beans>
